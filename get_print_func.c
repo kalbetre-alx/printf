@@ -15,6 +15,10 @@ char *(*get_print_func(char c))(va_list)
 		{'i', print_decimal},
 		{'%', print_percent},
 		{'b', print_binary},
+		{'o', print_octal},
+		{'u', print_dec},
+		{'x', print_hex_x},
+		{'X', print_hex_X},
 		{'\0', NULL}};
 	int i = 0;
 
