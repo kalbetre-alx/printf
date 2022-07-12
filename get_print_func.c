@@ -19,6 +19,7 @@ char *(*get_print_func(char c))(va_list)
 		{'u', print_u_dec},
 		{'x', print_hex_x},
 		{'X', print_hex_X},
+		{'S', print_S_hex},
 		{'\0', NULL}};
 	int i = 0;
 
