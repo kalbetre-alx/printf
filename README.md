@@ -1,4 +1,4 @@
-# Project Specs
+# _printf Clone Project Specs
 
 This wiki is for a custom _printf function built in c.
 
