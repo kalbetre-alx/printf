@@ -25,6 +25,10 @@ char *print_binary(va_list args)
 		return (NULL);
 
 	str[i + 1] = '\0';
+
+	if (num == 0)
+		str[0] = '0';
+
 	while (num > 0)
 	{
 		str[i] = num % 2 + '0';
