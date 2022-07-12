@@ -12,7 +12,6 @@ char *rot13(char *str)
 	int i = 0, j, count = 52, is_lwr_caps = 0, is_upr_caps = 0;
 	char *keys = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char *encs = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
-	char x, y;
 
 	while (*(str + i) != '\0')
 	{
@@ -24,8 +23,6 @@ char *rot13(char *str)
 		{
 			if (*(str + i) == *(keys + j))
 			{
-				x = *(encs + j);
-
 				*(str + i) = *(encs + j);
 				break;
 			}
@@ -57,7 +54,6 @@ char *print_rot13(va_list args)
 	str = malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 		return (NULL);
-		
 	strcpy(str, s_arg);
 	rot13(str);
 
