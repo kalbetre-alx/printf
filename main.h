@@ -23,7 +23,7 @@ char *print_decimal(va_list args);
 char *print_percent(va_list args);
 char *print_binary(va_list args);
 char *print_octal(va_list args);
-char *print_dec(va_list args);
+char *print_u_dec(va_list args);
 char *print_hex_x(va_list args);
 char *print_hex_X(va_list args);
 
