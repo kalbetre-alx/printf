@@ -2,10 +2,10 @@
 #include <string.h>
 
 /**
- * @get_hex - Get the hex object
+ * get_hex - Get the hex object
  * @num: the number
- *  
- * Return: string representation of the hex 
+ *
+ * Return: string representation of the hex
  */
 char *get_hex(int num)
 {
@@ -21,7 +21,7 @@ char *get_hex(int num)
 }
 
 /**
- * print_S_hex - get a pointer to a formatted string containing the 
+ * print_S_hex - get a pointer to a formatted string containing the
  * passed string with non printable characters in hex
  * @args: the arguments
  *
@@ -35,11 +35,10 @@ char *print_S_hex(va_list args)
 
 	if (s_arg == NULL)
 		s_arg = "(null)";
-
 	len = strlen(s_arg);
 	while (i < len)
 	{
-		if ((0 < s_arg[i] < 32) || (s_arg[i] >= 127))
+		if ((s_arg[i] > 0 &&  s_arg[i] < 32) || (s_arg[i] >= 127))
 			non_print_count++;
 		i++;
 	}
@@ -47,7 +46,6 @@ char *print_S_hex(va_list args)
 	str = malloc(sizeof(char) * (len + non_print_count * 3 + 1));
 	if (str == NULL)
 		return (NULL);
-	
 	k = 0;
 	for (i = 0; s_arg[i] != '\0'; i++)
 	{
@@ -69,6 +67,5 @@ char *print_S_hex(va_list args)
 		}
 	}
 	str[k] = '\0';
-
 	return (str);
 }
