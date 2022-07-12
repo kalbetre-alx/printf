@@ -22,25 +22,21 @@ char *print_p_hex(va_list args)
 		str = malloc(sizeof(char) * 6);
 		if (str == NULL)
 			return (NULL);
-		return(strcpy(str, nill));
+		return (strcpy(str, nill));
 	}
-
 	while (pow <= num / 16)
 	{
 		pow *= 16;
 		count++;
 	}
-
 	str = malloc(sizeof(char) * (count + 3));
 	if (str == NULL)
 		return (NULL);
 
 	str[0] = '0';
 	str[1] = 'x';
-
 	if (num == 0)
 		str[i++] = '0';
-
 	for (; i < count + 2; i++)
 	{
 		digit = num / pow;
@@ -51,7 +47,6 @@ char *print_p_hex(va_list args)
 		num %= pow;
 		pow /= 16;
 	}
-
 	str[i] = '\0';
 	return (str);
 }
