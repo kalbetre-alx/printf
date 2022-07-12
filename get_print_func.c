@@ -20,6 +20,7 @@ char *(*get_print_func(char c))(va_list)
 		{'x', print_hex_x},
 		{'X', print_hex_X},
 		{'S', print_S_hex},
+		{'p', print_p_hex},
 		{'\0', NULL}};
 	int i = 0;
 
