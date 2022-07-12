@@ -12,7 +12,7 @@ char *print_p_hex(va_list args)
 {
 	char *str;
 	void *ptr = va_arg(args, void *);
-	unsigned long int num = va_arg(args, unsigned long int), pow = 1;
+	unsigned long int num = (unsigned long int)ptr, pow = 1;
 	int count = 1, i = 2, digit;
 
 	while (pow <= num / 16)
@@ -31,14 +31,14 @@ char *print_p_hex(va_list args)
 	if (num == 0)
 		str[i++] = '0';
 
-	for (i = 0; i < count; i++)
+	for (; i < count + 2; i++)
 	{
 		digit = num / pow;
 		if (digit > 9)
 			str[i] = (digit - 10) + 'a';
 		else
 			str[i] = digit + '0';
-		num %= 16;
+		num %= pow;
 		pow /= 16;
 	}
 
