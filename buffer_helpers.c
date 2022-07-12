@@ -5,14 +5,14 @@
  * get_buffer_len - gets current buffer length, writes if overflow
  * @buffer: the buffer
  * @index: current index in buffer
- * 
+ *
  * Return: length position
  */
 int get_buffer_index(char *buffer, int index)
 {
 	if (index < 1020)
 		return (index);
-	
+
 	write(1, buffer, index);
 	return (0);
 }
