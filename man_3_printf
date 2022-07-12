@@ -1,10 +1,13 @@
-.TH _printf 3 "12 July 2022" "1.0" "custom man page"
-.SH NAME
-.B _printf - formatted output conversion function
-.SH SYNOPSIS
-.B #include "main.h"
-.sp
-int _printf(const char *format, ...);
+.TH _printf 3 "12 July 2022"
+			  "1.0"
+			  "custom man page"
+				  .SH NAME
+				  .B _printf -
+	formatted output conversion function
+		.SH SYNOPSIS
+		.B #include "main.h"
+		.sp int
+		_printf(const char *format, ...);
 .SH DESCRIPTION
 The function _printf() outputs according to a format as described below. It writes output to 
 .I stdout, 
@@ -21,21 +24,43 @@ The overall syntax of a conversion specification is:
 %[$][modifier]conversion
 .SS Conversion Specifiers
 .sp
-c      The 
-.I int 
-argument is converted to an unsigned char and the result character is printed.
-.sp
-s      The 
-.I const char * 
-argument is expected to be a pointer to an array of character including a terminating null byte.
-.sp
-d, i   The 
+d, i         The 
 .I int 
 argument is converted to signed decimal notation.
 .sp
-o      The
-.I int
-argument is converted to octal as characters, and the result is written.  
+o, u, x, X   The 
+.I int 
+unsigned int
+argument is converted to unsigned octal (o), unsigned decimal (u), or unsigned hexadecimal (x and X) notation.
+.sp
+c             The 
+.I int 
+argument is converted to an unsigned char and the result character is printed.
+.sp
+s             The 
+.I const char * 
+argument is expected to be a pointer to an array of character including a terminating null byte.
+.sp
+b             The 
+.I unsigned int 
+argument is converted to binary.
+.sp
+S             The 
+.I const char * 
+argument is expected to be a pointer to an array of character including a terminating null byte. Non printable characters are printed in hex.
+.sp
+p             The 
+.I void * 
+pointer argument is printed in hexadecimal.
+.sp
+r             The 
+.I const char * 
+argument is reversed.
+.sp
+R             The 
+.I const char * 
+argument is is encrypted in ROT13 encryption.
+.sp 
 .SH RETURN VALUE
 Upon successful return, this function should return the number of characters printed, excluding the null byte for the output of strings.
 .SH CONFORMING TO
