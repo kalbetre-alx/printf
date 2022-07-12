@@ -1,5 +1,6 @@
 #include "main.h"
 #include <math.h>
+#include <string.h>
 
 /**
  * print_p_hex - gets pointer to a string containing a hex
@@ -14,6 +15,15 @@ char *print_p_hex(va_list args)
 	void *ptr = va_arg(args, void *);
 	unsigned long int num = (unsigned long int)ptr, pow = 1;
 	int count = 1, i = 2, digit;
+	char *nill = "(nil)";
+
+	if (num == 0)
+	{
+		str = malloc(sizeof(char) * 6);
+		if (str == NULL)
+			return (NULL);
+		return(strcpy(str, nill));
+	}
 
 	while (pow <= num / 16)
 	{
