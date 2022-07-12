@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 /**
- * get_buffer_len - gets current buffer length, writes if overflow
+ * get_buffer_index - gets current buffer length, writes if overflow
  * @buffer: the buffer
  * @index: current index in buffer
  *

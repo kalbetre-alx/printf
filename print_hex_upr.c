@@ -2,7 +2,7 @@
 #include <math.h>
 
 /**
- * print_octal - gets pointer to a string containing a octal
+ * print_hex_X - gets pointer to a string containing a octal
  * representation given number
  * @args: the arguments
  *
