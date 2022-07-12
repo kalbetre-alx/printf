@@ -14,6 +14,7 @@ char *(*get_print_func(char c))(va_list)
 		{'d', print_decimal},
 		{'i', print_decimal},
 		{'%', print_percent},
+		{'b', print_binary},
 		{'\0', NULL}};
 	int i = 0;
 

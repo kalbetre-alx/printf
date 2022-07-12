@@ -21,6 +21,7 @@ char *print_string(va_list args);
 char *print_char(va_list args);
 char *print_decimal(va_list args);
 char *print_percent(va_list args);
+char *print_binary(va_list args);
 
 char *(*get_print_func(char c))(va_list);
 
