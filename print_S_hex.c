@@ -10,11 +10,12 @@
 char *get_hex(int num)
 {
 	char *hex = malloc(sizeof(char) * 5);
+	int dig_1 = num / 16, dig_2 = num % 16;
 
 	hex[0] = '\\';
 	hex[1] = 'x';
-	hex[2] = num / 16 + '0';
-	hex[3] = num % 16 < 9 ? num + '0' : (num - 10) + 'A';
+	hex[2] = dig_1 < 9 ? dig_1 + '0' : (dig_1 - 10) + 'A';
+	hex[3] = dig_2 < 9 ? dig_2 + '0' : (dig_2 - 10) + 'A';
 	hex[4] = '\0';
 
 	return (hex);
@@ -51,7 +52,7 @@ char *print_S_hex(va_list args)
 	{
 		if ((s_arg[i] > 0 &&  s_arg[i] < 32) || (s_arg[i] >= 127))
 		{
-			temp_hex = get_hex((int)s_arg[i]);
+			temp_hex = get_hex((unsigned int)s_arg[i]);
 			for (j = 0; temp_hex[j] != '\0'; j++)
 			{
 				str[k] = temp_hex[j];
