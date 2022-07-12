@@ -17,6 +17,8 @@ int _printf(const char *format, ...)
 	if (format == NULL || buffer == NULL)
 		return (-1);
 	va_start(list, format);
+	if (*format == '%' && *(format + 1) == ' ')
+		return (-1);
 	while (*format != '\0')
 	{
 		result = handle_frmt(format, buffer, &b_idx, &len, list);
