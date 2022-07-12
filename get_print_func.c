@@ -21,6 +21,7 @@ char *(*get_print_func(char c))(va_list)
 		{'X', print_hex_X},
 		{'S', print_S_hex},
 		{'p', print_p_hex},
+		{'r', print_r},
 		{'\0', NULL}};
 	int i = 0;
 

@@ -28,6 +28,7 @@ char *print_hex_x(va_list args);
 char *print_hex_X(va_list args);
 char *print_S_hex(va_list args);
 char *print_p_hex(va_list args);
+char *print_r(va_list args);
 
 char *(*get_print_func(char c))(va_list);
 
