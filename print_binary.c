@@ -11,8 +11,8 @@
 char *print_binary(va_list args)
 {
 	char *str;
-	unsigned int num = va_arg(args, unsigned int);
-	int pow = 1, i = 0;
+	unsigned int num = va_arg(args, unsigned int), pow = 1;
+	int i = 0;
 
 	while (pow <= num / 2)
 	{
